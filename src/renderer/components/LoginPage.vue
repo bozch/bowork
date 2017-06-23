@@ -1,12 +1,20 @@
 <template>
   <div id="wrapper">
-    <img id="logo" src="~@/assets/logo.png" alt="electron-vue">
+    <img id="logo" src="~@/assets/going-green-slogan.gif" alt="electron-vue">
     <main>
       <div class="left-side">
         <span class="title">
           Welcome to your new project!
         </span>
         <system-information></system-information>
+      </div>
+
+      <div class="window"><div class="window-content">
+    <div class="pane-group">
+      <div class="pane-sm sidebar">...</div>
+      <div class="pane">...</div>
+    </div>
+  </div>
       </div>
 
       <div class="right-side">
@@ -23,7 +31,6 @@
           <div class="title alt">Other Documentation</div>
           <button class="alt" @click="open('https://electron.atom.io/docs/')">Electron</button>
           <button class="alt" @click="open('https://vuejs.org/v2/guide/')">Vue.js</button>
-          <router-link to="/login">LOGIN</router-link>
         </div>
       </div>
     </main>
@@ -46,6 +53,7 @@
 
 <style>
   @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');
+  @import '~@/assets/css/photon.css';
 
   * {
     box-sizing: border-box;
