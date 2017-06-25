@@ -1,4 +1,4 @@
-# bowork
+﻿# bowork
 
 > VueWorkspace for you
 
@@ -35,4 +35,6 @@ This project was generated with [electron-vue](https://github.com/SimulatedGREG/
 
 
 ## 引入外部样式表
+
+https://github.com/jdorn/json-editor
 
