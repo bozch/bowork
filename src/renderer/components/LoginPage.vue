@@ -1,48 +1,89 @@
 <template>
   <div id="wrapper">
-    <img id="logo" src="~@/assets/going-green-slogan.gif" alt="electron-vue">
-    <main>
-      <div class="left-side">
-        <span class="title">
-          Welcome to your new project!
-        </span>
-        <system-information></system-information>
+    <div class="window">
+      <header class="toolbar toolbar-header">
+        <h1 class="title">Bowork - Enjoy you wrok!</h1>
+        <div class="toolbar-actions">
+          <div class="btn-group">
+            <button class="btn btn-default">
+              <span class="icon icon-home"></span>
+            </button>
+            <button class="btn btn-default">
+              <span class="icon icon-folder"></span>
+            </button>
+            <button class="btn btn-default active">
+              <span class="icon icon-cloud"></span>
+            </button>
+            <button class="btn btn-default">
+              <span class="icon icon-popup"></span>
+            </button>
+            <button class="btn btn-default">
+              <span class="icon icon-shuffle"></span>
+            </button>
+          </div>
+  
+          <button class="btn btn-default">
+            <span class="icon icon-home icon-text"></span>
+            Filters
+          </button>
+  
+          <button class="btn btn-default btn-dropdown pull-right">
+            <span class="icon icon-megaphone"></span>
+          </button>
+        </div>
+      </header>
+      <div class="window-content">
+        <div class="pane-group">
+          <div class="pane-sm sidebar">
+            <nav class="nav-group">
+              <h5 class="nav-group-title">工具</h5>
+              <a class="nav-group-item active">
+                <span class="icon icon-home"></span>
+                主页
+              </a>
+              <span class="nav-group-item">
+                <span class="icon icon-download"></span>
+                常用链接
+              </span>
+              <span class="nav-group-item">
+                <span class="icon icon-folder"></span>
+                编码工具
+              </span>
+              <span class="nav-group-item">
+                <span class="icon icon-signal"></span>
+                加密工具
+              </span>
+              <span class="nav-group-item">
+                <span class="icon icon-print"></span>
+                笔记
+              </span>
+              <span class="nav-group-item">
+                <span class="icon icon-cloud"></span>
+                工具
+              </span>
+            </nav>
+            
+          </div>
+          <div class="pane">
+            <fast-links></fast-links>
+          </div>
+        </div>
       </div>
-
-      <div class="window"><div class="window-content">
-    <div class="pane-group">
-      <div class="pane-sm sidebar">...</div>
-      <div class="pane">...</div>
+      <footer class="toolbar toolbar-footer">
+        <div class="toolbar-actions">
+        </div>
+      </footer>
     </div>
-  </div>
-      </div>
-
-      <div class="right-side">
-        <div class="doc">
-          <div class="title">Getting Started</div>
-          <p>
-            electron-vue comes packed with detailed documentation that covers everything from
-            internal configurations, using the project structure, building your application,
-            and so much more.
-          </p>
-          <button @click="open('https://simulatedgreg.gitbooks.io/electron-vue/content/')">Read the Docs</button><br><br>
-        </div>
-        <div class="doc">
-          <div class="title alt">Other Documentation</div>
-          <button class="alt" @click="open('https://electron.atom.io/docs/')">Electron</button>
-          <button class="alt" @click="open('https://vuejs.org/v2/guide/')">Vue.js</button>
-        </div>
-      </div>
-    </main>
   </div>
 </template>
 
 <script>
   import SystemInformation from './LandingPage/SystemInformation'
+  import FastLinks from './FastLinks'
 
   export default {
     name: 'landing-page',
-    components: { SystemInformation },
+    components: { SystemInformation, FastLinks },
     methods: {
       open (link) {
         this.$electron.shell.openExternal(link)
@@ -53,7 +94,6 @@
 
 <style>
   @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');
-  @import '~@/assets/css/photon.css';
 
   * {
     box-sizing: border-box;
@@ -61,7 +101,11 @@
     padding: 0;
   }
 
-  body { font-family: 'Source Sans Pro', sans-serif; }
+  body { 
+    font-family: 'Source Sans Pro', sans-serif;  
+    background-image: url('~@/assets/going-green-slogan.gif');
+    background-repeat: no-repeat;
+    background-position: center;}
 
   #wrapper {
     background:
@@ -71,7 +115,7 @@
         rgba(229, 229, 229, .9) 100%
       );
     height: 100vh;
-    padding: 60px 80px;
+    padding: 0 0;
     width: 100vw;
   }
 
@@ -84,6 +128,8 @@
   main {
     display: flex;
     justify-content: space-between;
+    flex-flow: wrap;
+    padding-left: 6px;
   }
 
   main > div { flex-basis: 50%; }
@@ -91,6 +137,11 @@
   .left-side {
     display: flex;
     flex-direction: column;
+  }
+
+  .bottom {
+    display: flex;
+    flex-wrap: nowrap;
   }
 
   .welcome {

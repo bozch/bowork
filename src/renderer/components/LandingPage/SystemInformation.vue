@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="title">Information</div>
+    <div class="title">开发环境信息</div>
     <div class="items">
       <div class="item">
         <div class="name">Path:</div>

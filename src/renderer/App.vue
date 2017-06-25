@@ -11,5 +11,6 @@
 </script>
 
 <style>
+  @import '~@/assets/css/photon.css';
   /* CSS */
 </style>
