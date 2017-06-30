@@ -5,7 +5,7 @@
         <h1 class="title">Bowork - Enjoy you wrok!</h1>
         <div class="toolbar-actions">
           <div class="btn-group">
-            <button class="btn btn-default">
+            <button class="btn btn-default" @click="linkto('/')">
               <span class="icon icon-home"></span>
             </button>
             <button class="btn btn-default">
@@ -67,6 +67,9 @@
           <div class="pane">
             <fast-links></fast-links>
           </div>
+          <div class="pane">
+            <cryptos></cryptos>
+          </div>
         </div>
       </div>
       <footer class="toolbar toolbar-footer">
@@ -80,13 +83,17 @@
 <script>
   import SystemInformation from './LandingPage/SystemInformation'
   import FastLinks from './FastLinks'
+  import Cryptos from './Cryptos'
 
   export default {
     name: 'landing-page',
-    components: { SystemInformation, FastLinks },
+    components: { SystemInformation, FastLinks, Cryptos },
     methods: {
       open (link) {
         this.$electron.shell.openExternal(link)
+      },
+      linkto (link) {
+        this.$router.push(link)
       }
     }
   }

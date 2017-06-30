@@ -4,13 +4,14 @@
       <div class="window-content">
         <div class="pane-group">
           <div class="pane">
-            
+            <input type="text" placeholder="查询" />
               <ol>
                 <li>1. 从本地获取地址信息</li>
                 <li>2. 从具体的地址url中获取</li>
                 <li>3. 输入地址展示url中所有的快捷链接</li>
                 <li>4. 名称和链接添加、编辑</li>
                 <li>5. 布局： 常用链接，链接分类，链接拖动</li>
+                <li>6. 搜索常用链接</li>
               </ol>
           </div>
           <div class="pane">
