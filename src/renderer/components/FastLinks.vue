@@ -4,9 +4,9 @@
       <div class="window-content">
         <div class="pane-group">
           <div class="pane">
-              
+              <input type="text" class="queryInput" v-model="filterName" placeholder="查询">
               <ul class="fastlinks">
-                <li  v-for="(categ,key) in links" :key="key" class="category">
+                <li  v-for="(categ,key) in filterByName" :key="key" class="category">
                   <span>{{categ.name}} </span>
                   <ul class="linkItems">
                     <li v-for="(link,i) in categ.data" :key="i" :style="'border-color:' + randomColor() ">
@@ -23,6 +23,7 @@
                 <li>4. 名称和链接添加、编辑</li>
                 <li>5. 布局： 常用链接，链接分类，链接拖动</li>
                 <li>6. 搜索常用链接</li>
+                <li>待做：添加animate.css velocity.js</li>
               </ol>
           </div>
         </div>
@@ -38,8 +39,8 @@ import randomColor from 'randomcolor'
 export default {
   name: 'fast-links',
   data () {
-    return {links: {
-      front: {
+    return {links: [
+      {
         name: '前端',
         data: [
           {name: 'Photon', link: 'http://photonkit.com/components/'},
@@ -49,22 +50,49 @@ export default {
           {name: 'Electron', link: 'https://electron.atom.io/docs/'},
           {name: 'Electron-vue', link: 'https://simulatedgreg.gitbooks.io/electron-vue/content/en/'},
           {name: 'Vuejs', link: 'https://vuejs.org/v2/guide/'},
+          {name: 'Vue2CheatSheet', link: 'https://vuejs-tips.github.io/cheatsheet/'},
           {name: 'Vuex', link: 'https://vuex.vuejs.org/zh-cn/'},
-          {name: 'Vue-router', link: 'https://router.vuejs.org/en/'}
+          {name: 'Vue-router', link: 'https://router.vuejs.org/en/'},
+          {name: 'animate.css', link: 'https://github.com/daneden/animate.css'},
+          {name: 'velocityJs', link: 'http://velocityjs.org/'}
         ]},
-      system: {
+      {
         name: '系统',
         data: [
           {name: 'D:', link: 'file:D:/'},
           {name: 'E:', link: 'file:E:/'},
-          {name: 'F:', link: 'file:F:/'}
-        ]}
-    },
+          {name: 'F:', link: 'file:F:/'},
+          {name: 'MAVEN_REPOSITORY', link: 'file:C:/Users/GYYX-DEV/.m2/repository'}
+        ]},
+      {
+        name: '活动库更新',
+        data: [
+          {name: 'SOURCE', link: 'file:E:/WorkFiles/DailyFiles/20170619 活动springframework升级'},
+          {name: 'STS_SERVER', link: 'file:C:/devSoftware/java/pivotal-tc-server-developer-3.1.3.SR1/base-instance/lib'},
+          {name: 'TOMCAT_SERVER', link: 'file:F:/dev-tools/apache-tomcat-8.0.38/lib'}
+        ]
+      }
+    ],
       filterName: ''}
   },
   computed: {
     filterByName (name) {
-      // return this.links.filter((cate) => link.name.toLowerCase().indexOf(this.filterName) !== -1)
+      let _links = []
+      this.links.forEach((element) => {
+        let _element = {}
+        _element.name = element.name
+        _element.data = []
+        if (_element.data) {
+          element.data.forEach((item) => {
+            if (item.name.toLowerCase().indexOf(this.filterName) !== -1) {
+              _element.data.push(item)
+            }
+          })
+          _links.push(_element)
+        }
+      })
+
+      return _links
     }
   },
   methods: {
@@ -114,4 +142,10 @@ export default {
 a {
   cursor: pointer;
 }
+
+.queryInput {
+  margin-left: 10px;
+  margin-top: 10px; 
+}
+
 </style>

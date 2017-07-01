@@ -16,6 +16,9 @@ export default new Router({
         }, {
           path: 'cryptos',
           component: require('@/components/Cryptos')
+        }, {
+          path: 'dragarea',
+          component: require('@/components/DragArea')
         }
 
       ]

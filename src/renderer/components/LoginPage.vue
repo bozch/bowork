@@ -54,11 +54,11 @@
               </span>
               <span class="nav-group-item" @click="routeTo('cryptos')">
                 <span class="icon icon-folder"></span>
-                编码工具
+                编码工具、加密工具
               </span>
-              <span class="nav-group-item">
+              <span class="nav-group-item" @click="routeTo('dragarea')">
                 <span class="icon icon-signal"></span>
-                加密工具
+                拖拽
               </span>
               <span class="nav-group-item">
                 <span class="icon icon-print"></span>
