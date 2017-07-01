@@ -21,7 +21,14 @@
               <span class="icon icon-shuffle"></span>
             </button>
           </div>
-  
+          <div class="btn-group">
+            <button class="btn btn-default" title="向前" @click="historyRoute(-1)">
+              <span class="icon icon-left" ></span>
+            </button>
+            <button class="btn btn-default" tiltle="向后"  @click="historyRoute(1)">
+              <span class="icon icon-right"></span>
+            </button>
+          </div>
           <button class="btn btn-default">
             <span class="icon icon-home icon-text"></span>
             Filters
@@ -41,11 +48,11 @@
                 <span class="icon icon-home"></span>
                 主页
               </a>
-              <span class="nav-group-item">
+              <span class="nav-group-item" @click="routeTo('fastlinks')">
                 <span class="icon icon-download"></span>
                 常用链接
               </span>
-              <span class="nav-group-item">
+              <span class="nav-group-item" @click="routeTo('cryptos')">
                 <span class="icon icon-folder"></span>
                 编码工具
               </span>
@@ -65,10 +72,7 @@
             
           </div>
           <div class="pane">
-            <fast-links></fast-links>
-          </div>
-          <div class="pane">
-            <cryptos></cryptos>
+            <router-view></router-view>
           </div>
         </div>
       </div>
@@ -92,8 +96,14 @@
       open (link) {
         this.$electron.shell.openExternal(link)
       },
+      routeTo (link) {
+        this.$router.push('/login/' + link)
+      },
       linkto (link) {
         this.$router.push(link)
+      },
+      historyRoute (num) {
+        this.$router.go(num)
       }
     }
   }

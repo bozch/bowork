@@ -4,17 +4,18 @@
       <div class="window-content">
         <div class="pane-group">
           <div class="pane">
-              <input type="text" v-model="filterName" placeholder="查询1" >
+              
               <ul class="fastlinks">
                 <li  v-for="(categ,key) in links" :key="key" class="category">
-                  <span>{{categ.name}}</span>
+                  <span>{{categ.name}} </span>
                   <ul class="linkItems">
-                    <li v-for="(link,i) in categ.data" :key="i">
-                      {{i+1}}. <a @click.prevent="open(link.link)" :title="link.link">{{link.name}}</a>
+                    <li v-for="(link,i) in categ.data" :key="i" :style="'border-color:' + randomColor() ">
+                      <a @click.prevent="open(link.link)" :title="link.link" >{{i+1}}. {{link.name}}</a>
                     </li>
                   </ul>
                 </li>
               </ul>
+              <br>
               <ol>
                 <li>1. 从本地获取地址信息</li>
                 <li>2. 从具体的地址url中获取</li>
@@ -24,9 +25,6 @@
                 <li>6. 搜索常用链接</li>
               </ol>
           </div>
-          <div class="pane">
-
-          </div>
         </div>
       </div>
     </div>
@@ -35,6 +33,7 @@
 </template>
 
 <script>
+import randomColor from 'randomcolor'
 
 export default {
   name: 'fast-links',
@@ -43,14 +42,14 @@ export default {
       front: {
         name: '前端',
         data: [
-          {name: 'Photon', link: 'https://photoncss.org'},
+          {name: 'Photon', link: 'http://photonkit.com/components/'},
           {name: 'BootStrap', link: 'https://getbootstrap.com'},
           {name: 'Flex', link: 'https://css-tricks.com/snippets/css/a-guide-to-flexbox/'},
           {name: 'Grid', link: 'https://css-tricks.com/snippets/css/complete-guide-grid/'},
           {name: 'Electron', link: 'https://electron.atom.io/docs/'},
           {name: 'Electron-vue', link: 'https://simulatedgreg.gitbooks.io/electron-vue/content/en/'},
           {name: 'Vuejs', link: 'https://vuejs.org/v2/guide/'},
-          {name: 'Vuex', link: 'https://vuex.vuejs.org/en/'},
+          {name: 'Vuex', link: 'https://vuex.vuejs.org/zh-cn/'},
           {name: 'Vue-router', link: 'https://router.vuejs.org/en/'}
         ]},
       system: {
@@ -65,23 +64,32 @@ export default {
   },
   computed: {
     filterByName (name) {
-      return this.links.front.filter((link) => link.name.toLowerCase().indexOf(this.filterName) !== -1)
+      // return this.links.filter((cate) => link.name.toLowerCase().indexOf(this.filterName) !== -1)
     }
   },
   methods: {
     open (link) {
       this.$electron.shell.openExternal(link)
+    },
+    randomColor () {
+      return randomColor()
     }
   }
 }
 </script>
 
 <style>
-.fastlinks {
+.fastlinks .category {
+  margin-top: 10px;
 }
 
 .fastlinks .category span{
+  display: block;
   font-size: 2em;
+  font-family: '微软雅黑';
+  border-top: 1px solid #aaa;
+  border-bottom: 1px solid #aaa;
+  padding-left: 1em;
 }
 
 .linkItems {
@@ -91,14 +99,17 @@ export default {
   align-content: space-around ;
   list-style: none;
   font-size: 1.5em;
-  
+  padding-left: 1em;
+  padding-right: 1em;
 }
 
 .linkItems li{
-  border: 1px dotted green;  
+  border: 2px solid green;  
   border-radius: 5px;
   margin-right: 0.5em;
   margin-top: 0.5em;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
 }
 a {
   cursor: pointer;

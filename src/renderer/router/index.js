@@ -8,7 +8,17 @@ export default new Router({
     {
       path: '/login',
       name: 'login-page',
-      component: require('@/components/LoginPage')
+      component: require('@/components/LoginPage'),
+      children: [
+        {
+          path: 'fastlinks',
+          component: require('@/components/FastLinks')
+        }, {
+          path: 'cryptos',
+          component: require('@/components/Cryptos')
+        }
+
+      ]
     },
     {
       path: '/',
