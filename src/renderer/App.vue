@@ -5,6 +5,7 @@
 </template>
 
 <script>
+
   export default {
     name: 'bowork'
   }
@@ -12,6 +13,7 @@
 
 <style>
   @import '~@/assets/css/photon.css';
+
   /* CSS */
   * {font-family: '微软雅黑'}
 </style>

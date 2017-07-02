@@ -1,6 +1,8 @@
 <template>
   <div id="wrapper">
-    <img id="logo" src="~@/assets/logo.png" alt="electron-vue">
+    <transition enter-active-class="animate slideInRgith">
+      <img id="logo" src="~@/assets/logo.png" alt="electron-vue">
+    </transition>
     <main>
       <div class="left-side">
         <span class="title">
@@ -32,6 +34,7 @@
 
 <script>
   import SystemInformation from './LandingPage/SystemInformation'
+  // import { animate } from 'animate.css'
 
   export default {
     name: 'landing-page',
@@ -39,6 +42,10 @@
     methods: {
       open (link) {
         this.$electron.shell.openExternal(link)
+      },
+      close (ll) {
+        // var sss = animate
+        // console.log(sss)
       }
     }
   }
@@ -46,6 +53,7 @@
 
 <style>
   @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');
+  @import url('~/animate.css');
 
   * {
     box-sizing: border-box;

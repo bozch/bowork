@@ -19,6 +19,9 @@ export default new Router({
         }, {
           path: 'dragarea',
           component: require('@/components/DragArea')
+        }, {
+          path: 'electron_note',
+          component: require('@/components/ElectronVueDevelop')
         }
 
       ]

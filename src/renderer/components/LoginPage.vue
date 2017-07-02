@@ -60,7 +60,7 @@
                 <span class="icon icon-signal"></span>
                 拖拽
               </span>
-              <span class="nav-group-item">
+              <span class="nav-group-item" @click="routeTo('electron_note')">
                 <span class="icon icon-print"></span>
                 笔记
               </span>
