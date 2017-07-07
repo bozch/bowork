@@ -20,8 +20,11 @@ export default new Router({
           path: 'dragarea',
           component: require('@/components/DragArea')
         }, {
-          path: 'electron_note',
+          path: '/',
           component: require('@/components/ElectronVueDevelop')
+        }, {
+          path: 'json_editor',
+          component: require('@/components/JsonEditor')
         }
 
       ]

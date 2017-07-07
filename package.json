@@ -60,6 +60,7 @@
   "dependencies": {
     "animate.css": "^3.5.2",
     "axios": "^0.16.1",
+    "json-editor": "^0.7.28",
     "randomcolor": "^0.5.3",
     "velocityjs": "^0.9.6",
     "vue": "^2.3.3",

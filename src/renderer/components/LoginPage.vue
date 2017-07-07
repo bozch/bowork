@@ -44,7 +44,7 @@
           <div class="pane-sm sidebar">
             <nav class="nav-group">
               <h5 class="nav-group-title">工具</h5>
-              <a class="nav-group-item active">
+              <a class="nav-group-item active" @click="routeTo('')">
                 <span class="icon icon-home"></span>
                 主页
               </a>
@@ -64,9 +64,9 @@
                 <span class="icon icon-print"></span>
                 笔记
               </span>
-              <span class="nav-group-item">
+              <span class="nav-group-item" @click="routeTo('json_editor')">
                 <span class="icon icon-cloud"></span>
-                工具
+                json工具
               </span>
             </nav>
             

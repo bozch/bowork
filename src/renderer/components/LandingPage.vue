@@ -1,8 +1,6 @@
 <template>
   <div id="wrapper">
-    <transition enter-active-class="animate slideInRgith">
       <img id="logo" src="~@/assets/logo.png" alt="electron-vue">
-    </transition>
     <main>
       <div class="left-side">
         <span class="title">
@@ -53,7 +51,6 @@
 
 <style>
   @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');
-  @import url('~/animate.css');
 
   * {
     box-sizing: border-box;

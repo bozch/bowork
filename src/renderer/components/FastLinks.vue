@@ -16,7 +16,8 @@
                 </li>
               </ul>
               <br>
-              <ol>
+              <transition enter-active-class="animated bounceInDown" leave-active-class="animated slideOutRight">
+              <ol v-if="showInfo">
                 <li>1. 从本地获取地址信息</li>
                 <li>2. 从具体的地址url中获取</li>
                 <li>3. 输入地址展示url中所有的快捷链接</li>
@@ -25,6 +26,8 @@
                 <li>6. 搜索常用链接</li>
                 <li>待做：添加animate.css velocity.js</li>
               </ol>
+              </transition>
+              <button @click="showInfo=!showInfo">Trigger</button>
           </div>
         </div>
       </div>
@@ -62,7 +65,8 @@ export default {
           {name: 'D:', link: 'file:D:/'},
           {name: 'E:', link: 'file:E:/'},
           {name: 'F:', link: 'file:F:/'},
-          {name: 'MAVEN_REPOSITORY', link: 'file:C:/Users/GYYX-DEV/.m2/repository'}
+          {name: 'MAVEN_REPOSITORY', link: 'file:C:/Users/GYYX-DEV/.m2/repository'},
+          {name: 'WIKI', link: 'file:E:/Workspace/wiki'}
         ]},
       {
         name: '活动库更新',
@@ -71,9 +75,16 @@ export default {
           {name: 'STS_SERVER', link: 'file:C:/devSoftware/java/pivotal-tc-server-developer-3.1.3.SR1/base-instance/lib'},
           {name: 'TOMCAT_SERVER', link: 'file:F:/dev-tools/apache-tomcat-8.0.38/lib'}
         ]
+      },
+      {
+        name: '书籍',
+        data: [
+          {name: 'Books', link: 'file:E:/WorkFiles/StudyFiles'}
+        ]
       }
     ],
-      filterName: ''}
+      filterName: '',
+      showInfo: false}
   },
   computed: {
     filterByName (name) {

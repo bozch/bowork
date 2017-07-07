@@ -13,6 +13,7 @@
 
 <style>
   @import '~@/assets/css/photon.css';
+  @import '~animate.css';
 
   /* CSS */
   * {font-family: '微软雅黑'}
