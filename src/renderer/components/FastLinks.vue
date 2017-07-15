@@ -28,7 +28,134 @@
               </ol>
               </transition>
               <button @click="showInfo=!showInfo">Trigger</button>
+              <div class="gyfastlinks">
+                <table class="table-striped">
+                      <thead>
+                        <tr>
+                          <th>名称</th>
+                          <th>链接</th>
+                          <th>备注</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>photon.css</td>
+                          <td>CSS</td>
+                          <td>28K</td>
+                        </tr>
+                        <tr>
+                          <td>photon.css</td>
+                          <td>CSS</td>
+                          <td>28K</td>
+                        </tr>
+                        <tr>
+                          <td>photon.css</td>
+                          <td>CSS</td>
+                          <td>28K</td>
+                        </tr>
+                        <tr>
+                          <td>photon.css</td>
+                          <td>CSS</td>
+                          <td>28k</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                <table class="table-striped">
+                      <thead>
+                        <tr>
+                          <th>名称</th>
+                          <th>链接</th>
+                          <th>备注</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>photon.css</td>
+                          <td>CSS</td>
+                          <td>28K</td>
+                        </tr>
+                        <tr>
+                          <td>photon.css</td>
+                          <td>CSS</td>
+                          <td>28K</td>
+                        </tr>
+                        <tr>
+                          <td>photon.css</td>
+                          <td>CSS</td>
+                          <td>28K</td>
+                        </tr>
+                        <tr>
+                          <td>photon.css</td>
+                          <td>CSS</td>
+                          <td>28k</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                <table class="table-striped">
+                      <thead>
+                        <tr>
+                          <th>名称</th>
+                          <th>链接</th>
+                          <th>备注</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>photon.css</td>
+                          <td>CSS</td>
+                          <td>28K</td>
+                        </tr>
+                        <tr>
+                          <td>photon.css</td>
+                          <td>CSS</td>
+                          <td>28K</td>
+                        </tr>
+                        <tr>
+                          <td>photon.css</td>
+                          <td>CSS</td>
+                          <td>28K</td>
+                        </tr>
+                        <tr>
+                          <td>photon.css</td>
+                          <td>CSS</td>
+                          <td>28111111111111111111111111111111111111111111K</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                <table class="table-striped">
+                      <thead>
+                        <tr>
+                          <th>名称</th>
+                          <th>链接</th>
+                          <th>备注</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>photon.css</td>
+                          <td>CSS</td>
+                          <td>28K</td>
+                        </tr>
+                        <tr>
+                          <td>photon.css</td>
+                          <td>CSS</td>
+                          <td>28K</td>
+                        </tr>
+                        <tr>
+                          <td>photon.css</td>
+                          <td>CSS</td>
+                          <td>28K</td>
+                        </tr>
+                        <tr>
+                          <td>photon.css</td>
+                          <td>CSS</td>
+                          <td>28111111111111111111111111111111111111111111K</td>
+                        </tr>
+                      </tbody>
+                    </table>
+              </div>
           </div>
+
         </div>
       </div>
     </div>
@@ -57,7 +184,8 @@ export default {
           {name: 'Vuex', link: 'https://vuex.vuejs.org/zh-cn/'},
           {name: 'Vue-router', link: 'https://router.vuejs.org/en/'},
           {name: 'animate.css', link: 'https://github.com/daneden/animate.css'},
-          {name: 'velocityJs', link: 'http://velocityjs.org/'}
+          {name: 'velocityJs', link: 'http://velocityjs.org/'},
+          {name: 'bulma', link: 'http://bulma.io/'}
         ]},
       {
         name: '系统',
@@ -77,7 +205,7 @@ export default {
         ]
       },
       {
-        name: '书籍',
+        name: '本地书籍',
         data: [
           {name: 'Books', link: 'file:E:/WorkFiles/StudyFiles'}
         ]
@@ -159,4 +287,8 @@ a {
   margin-top: 10px; 
 }
 
+.gyfastlinks {
+  width: 250px;
+  height: 200px;
+}
 </style>
