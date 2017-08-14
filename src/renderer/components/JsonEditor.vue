@@ -1,5 +1,6 @@
 <template>
     <div id="json_editor">
+        <div id="terminal"></div>
         <pre>
             功能描述：
                 1. 接受json对象
@@ -15,7 +16,10 @@
 </template>
 
 <script>
-
+    import Terminal from 'xterm'
+    var term = new Terminal()
+    term.open(document.getElementById('terminal'))
+    term.write('Hello from \\033[1;3;31mxterm.js\\033[0m $ ')
 </script>
 
 <style>
